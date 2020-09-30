@@ -38,12 +38,12 @@
 - belongs_to :user
 - belongs_to :plan
 
-## detail テーブル
+## details テーブル
 
 | Column        | Type       | Options                        |
 | ------------- | ---------- | ------------------------------ |
 | start_time    | string     |                                |
-| ending_time   | integer    |                                |
+| ending_time   | string     |                                |
 | deadline_time | string     |                                |
 | all_day       | string     |                                |
 | comment       | text       |                                |
