@@ -1,24 +1,54 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+# テーブル設計
 
-* Ruby version
+## users テーブル
 
-* System dependencies
+| Column    | Type    | Options     |
+| --------- | ------- | ----------- |
+| name      | string  | null: false |
+| email     | string  | null: false |
+| password  | string  | null: false |
 
-* Configuration
+### Association
 
-* Database creation
+- has_many :user_plans
 
-* Database initialization
+## plans テーブル
 
-* How to run the test suite
+| Column  | Type       | Options                        |
+| ------- | ---------- | ------------------------------ |
+| title   | string     | null: false                    |
 
-* Services (job queues, cache servers, search engines, etc.)
+### Association
 
-* Deployment instructions
+- has_many :user_plans
+- has_one :detail
 
-* ...
+## user_plans テーブル
+
+| Column | Type       | Options                        |
+| ------ | ---------- | ------------------------------ |
+| user   | references | null: false, foreign_key: true |
+| plan   | references | null: false, foreign_key: true |
+
+### Association
+
+- belongs_to :user
+- belongs_to :plan
+
+## detail テーブル
+
+| Column        | Type       | Options                        |
+| ------------- | ---------- | ------------------------------ |
+| start_time    | string     |                                |
+| ending_time   | integer    |                                |
+| deadline_time | string     |                                |
+| all_day       | string     |                                |
+| comment       | text       |                                |
+| plan          | references | null: false, foreign_key: true |
+
+### Association
+
+- belongs_to :plan
