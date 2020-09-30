@@ -14,6 +14,7 @@
 ### Association
 
 - has_many :user_plans
+- has_many :plans, through: user_plans
 
 ## plans テーブル
 
@@ -24,6 +25,7 @@
 ### Association
 
 - has_many :user_plans
+- has_many :users, through: user_plans
 - has_one :detail
 
 ## user_plans テーブル
