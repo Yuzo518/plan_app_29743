@@ -13,44 +13,35 @@
 
 ### Association
 
-- has_many :user_plans
-- has_many :plans, through: user_plans
+- has_many :plan_users
+- has_many :plans, through: plan_users
 
 ## plans テーブル
 
-| Column  | Type       | Options                        |
-| ------- | ---------- | ------------------------------ |
-| title   | string     | null: false                    |
+| Column        | Type       | Options      |
+| ------------- | ---------- | ------------ |
+| title         | string     | null: false  |
+| date_pattern  | string     | null: false  |
+| start_time    | string     | null: false  |
+| ending_time   | string     | null: false  |
+| comment       | text       |              |
+| master_id     | integer    | null: false  |
 
 ### Association
 
-- has_many :user_plans
-- has_many :users, through: user_plans
-- has_one :detail
+- has_many :plan_users
+- has_many :users, through: plan_users
 
-## user_plans テーブル
+## plan_users テーブル
 
 | Column | Type       | Options                        |
 | ------ | ---------- | ------------------------------ |
-| user   | references | null: false, foreign_key: true |
 | plan   | references | null: false, foreign_key: true |
+| user   | references | null: false, foreign_key: true |
 
 ### Association
 
 - belongs_to :user
 - belongs_to :plan
 
-## details テーブル
 
-| Column        | Type       | Options                        |
-| ------------- | ---------- | ------------------------------ |
-| start_time    | string     |                                |
-| ending_time   | string     |                                |
-| deadline_time | string     |                                |
-| all_day       | string     |                                |
-| comment       | text       |                                |
-| plan          | references | null: false, foreign_key: true |
-
-### Association
-
-- belongs_to :plan
