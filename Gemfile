@@ -57,3 +57,7 @@ gem 'pry-rails'
 group :production do
   gem 'rails_12factor'
 end
+gem "simple_calendar", "~> 2.0"
+gem "bootstrap-sass", "~>3.3.6"
+gem "jquery-rails"
+gem "jquery-ui-rails"
