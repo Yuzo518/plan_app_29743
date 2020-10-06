@@ -65,6 +65,10 @@ GEM
     bindex (0.8.1)
     bootsnap (1.4.8)
       msgpack (~> 1.0)
+    bootstrap (4.0.0.beta)
+      autoprefixer-rails (>= 6.0.3)
+      popper_js (~> 1.11.1)
+      sass (>= 3.4.19)
     bootstrap-sass (3.3.7)
       autoprefixer-rails (>= 5.2.1)
       sass (>= 3.3.4)
@@ -136,6 +140,7 @@ GEM
     parallel (1.19.2)
     parser (2.7.1.5)
       ast (~> 2.4.1)
+    popper_js (1.11.1)
     pry (0.13.1)
       coderay (~> 1.1)
       method_source (~> 1.0)
@@ -283,6 +288,7 @@ PLATFORMS
 
 DEPENDENCIES
   bootsnap (>= 1.4.2)
+  bootstrap
   bootstrap-sass (~> 3.3.6)
   byebug
   capybara (>= 2.15)
